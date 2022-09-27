@@ -2,6 +2,7 @@ const smallCups = document.querySelectorAll(".cup-small");
 const liters = document.getElementById("liters");
 const remainder = document.getElementById("remainder");
 const percentage = document.getElementById("percentage");
+let congrats = document.querySelector("h3");
 
 updateBigCup();
 
@@ -42,6 +43,7 @@ function updateBigCup() {
   if (fullCups === totalCups) {
     remainder.style.visibility = "hidden";
     remainder.style.height = 0;
+    congrats.innerText = `Congratulations, you've reached your goal!`;
   } else {
     remainder.style.visibility = "visible";
     liters.innerText = `${2 - (250 * fullCups) / 1000}L`;
